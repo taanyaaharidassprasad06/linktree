@@ -1,0 +1,216 @@
+:root {
+    --bg-body: #FAF8F5;
+    --text-primary: #2C2420;
+    --text-secondary: #7A6860;
+    --btn-bg: #1C1512;
+    --btn-text: #FAF8F5;
+    --btn-hover-bg: #362b28;
+    --ring: linear-gradient(135deg, #FAF8F5, #7A6860, #2C2420);
+    
+}
+
+[data-theme="dark"] {
+    --bg-body: #1C1512;
+    --text-primary: #FAF8F5;
+    --text-secondary: #F0EBE6;
+    --btn-bg: #FAF8F5;
+    --btn-text: #2C2420;
+    --btn-hover-bg: #dcdcdc;
+    --ring: linear-gradient(135deg, #2C2420, #7A6860, #FAF8F5);
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    /* elements need transition on color properties so that the toggle between light and dark mode happens smoothly instead of abruptly */
+    transition: background-color 0.3s ease;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    flex-grow: 1; /* stretch to fill rest of space - helps center element (justify content calculates alignment based on whatever space flex-grow returns) */
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 20px 0 0;
+}
+
+.theme-btn {
+    padding: 8px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.theme-btn:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+/* PROFILE STYLES */
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--ring);
+    padding: 4px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.about {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.location {
+    border: 1px solid var(--text-primary);
+    border-radius: 15px;
+    padding: 5px 8px 5px 5px;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* LINK CONTAINER STYLES */
+.link-container-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 500px;
+    margin-top: 30px;
+}
+
+/* LINK CARD STYLES */
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 500px;
+    height: 30px;
+    padding: 30px;
+    border-radius: 40px;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    transition: width 0.3s ease, height 0.3s ease, color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.link:hover {
+    height: 100px;
+}
+
+.link-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.url {
+    margin: 5px 0;
+}
+
+/* GRID CARD STYLES */
+.link-container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 60px 0 30px 0;
+    width: 850px;
+}
+
+.card {
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+    padding: 50px;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;;
+}
+
+.card:hover {
+    transform: scale(1.05); /* scale 5% larger */
+}
+
+@media (max-width: 768px) {
+    .profile-pic-container {
+        width: 80px;
+        height: 80px;
+        margin-top: 20px;
+    }
+    .about {
+        width: 300px;
+    }
+
+    .link {
+        width: 300px;
+    }
+
+    .link-container-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 20px;
+        width: 300px;
+    }
+
+    .card {
+        height: 150px;
+    }
+}
