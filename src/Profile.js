@@ -1,8 +1,9 @@
+import profile from './profile_pic.png'
 function Profile() {
     return (
         <div className="profile">
             <div className="profile-pic-container">
-                <img className="profile-img" src="/profile_pic.png" alt="my profile"/>
+                <img className="profile-img" src={profile} alt="my profile"/>
             </div>
             
             <div className="intro">
