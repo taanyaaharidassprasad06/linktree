@@ -35,8 +35,8 @@ Users can switch between a traditional list layout and a grid layout for viewing
    `npm start`
 
 ### Deployment
-This project is deployed using GitHub pages.
-Live Demo: <url>
+This project is deployed using GitHub pages.   
+Live Demo: https://taanyaaharidassprasad06.github.io/linktree/
 
 
 
